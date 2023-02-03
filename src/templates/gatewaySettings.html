@@ -1,0 +1,21 @@
+{% from "_includes/forms" import autosuggestField %}
+
+{{ autosuggestField({
+  label: 'Username'|t('commerce'),
+  id: 'username',
+  class: 'ltr',
+  name: 'username',
+  suggestEnvVars: true,
+  value: gateway.getUsername(false),
+  errors: gateway.getErrors('username')
+}) }}
+
+{{ autosuggestField({
+  label: 'Password'|t('commerce'),
+  id: 'password',
+  class: 'ltr',
+  name: 'password',
+  suggestEnvVars: true,
+  value: gateway.getPassword(false),
+  errors: gateway.getErrors('password')
+}) }}
